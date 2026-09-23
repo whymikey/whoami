@@ -27,14 +27,14 @@ const contactLinks = [
   {
     id: "email",
     name: "Email",
-    handle: "hello@example.com",
+    handle: "dnl-zlt@yandex.ru",
     description: "для официального и подробного",
     icon: "/images/mail.png",
     handleColor: "text-[#a855f7]",
     iconBg: "bg-[#a855f7]/10",
     borderColor: "border-[#a855f7]/20",
     hoverBorder: "hover:border-[#a855f7]/50",
-    link: "mailto:hello@example.com",
+    link: "mailto:dnl-zlt@yandex.ru",
   },
 ];
 export const Contacts = () => {
