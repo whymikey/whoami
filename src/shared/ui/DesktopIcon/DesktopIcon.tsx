@@ -1,6 +1,8 @@
+import type { ReactNode } from "react";
+
 interface DesktopIconProps {
   label: string;
-  icon: string;
+  icon: ReactNode;
   onDoubleClick?: () => void;
   onClick?: () => void;
 }
@@ -13,12 +15,14 @@ export const DesktopIcon = ({
 }: DesktopIconProps) => {
   return (
     <div
-      className="flex flex-col w-20 p-2 justify-center items-center hover:bg-white/10 rounded-md cursor-pointer transition-colors"
+      className="group flex flex-col w-20 md:w-24 p-2 justify-center items-center hover:bg-white/10 active:bg-white/20 rounded-lg cursor-pointer transition-all"
       onDoubleClick={onDoubleClick}
       onClick={onClick}
     >
-      <span className="text-4xl mb-1 select-none">{icon}</span>
-      <span className="text-xs text-white text-center drop-shadow-md break-word">
+      <span className="flex justify-center items-center mb-1 md:mb-2 select-none scale-90 md:scale-100 transition-transform group-active:scale-95">
+        {icon}
+      </span>
+      <span className="text-[11px] md:text-xs text-white text-center drop-shadow-md break-words line-clamp-2 px-1">
         {label}
       </span>
     </div>

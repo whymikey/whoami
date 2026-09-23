@@ -1,4 +1,3 @@
-import "./App.css";
 import { DesktopGrid } from "@/widgets/desktop-icons/ui";
 import { WindowManager } from "@/widgets/window-manager/ui";
 import { Dock } from "@/widgets/dock/ui";
@@ -6,18 +5,19 @@ import { MusicWidget } from "@/widgets/music-player/ui";
 import { CalendarWidget } from "@/widgets/calendar/ui";
 
 function App() {
-  return (
+return (
     <main
       className="w-screen h-screen relative bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{ backgroundImage: `url('/images/wallpaper.jpg')` }}
     >
       <div className="absolute inset-0 bg-black/20 z-0 pointer-events-none"></div>
+      
       <div className="relative z-10 w-full h-full flex flex-col">
         <div className="flex-1 relative">
           <DesktopGrid />
           <WindowManager />
           <Dock />
-          <div className="absolute top-8 right-8 z-0 flex flex-col items-center gap-10">
+          <div className="hidden md:flex absolute top-8 right-8 z-0 flex-col items-center gap-10">
             <MusicWidget />
             <CalendarWidget />
           </div>

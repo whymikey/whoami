@@ -50,8 +50,8 @@ export const Contacts = () => {
   };
 
   return (
-    <div className="h-full p-6 flex flex-col items-center justify-center overflow-y-auto">
-      <div className="w-full max-w-md flex flex-col gap-4">
+    <div className="h-full p-4 md:p-6 flex flex-col items-center md:justify-center overflow-y-auto">
+      <div className="w-full max-w-md flex flex-col gap-3 md:gap-4">
         {contactLinks.map((item) => (
           <a
             key={item.id}
@@ -59,34 +59,34 @@ export const Contacts = () => {
             target="_blank"
             rel="noreferrer"
             onClick={(e) => handleClick(e, item)}
-            className={`flex items-center p-4 rounded-2xl min-w-91.5 bg-[#0a0a0c]/80 backdrop-blur-md border ${item.borderColor} ${item.hoverBorder} transition-all duration-300 group no-underline cursor-pointer`}
+            className={`flex items-center p-3 md:p-4 rounded-2xl w-full bg-[#0a0a0c]/80 backdrop-blur-md border ${item.borderColor} ${item.hoverBorder} transition-all duration-300 group no-underline cursor-pointer`}
           >
             <div
-              className={`w-12 h-12 rounded-xl flex shrink-0 items-center justify-center text-2xl ${item.iconBg}`}
+              className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex shrink-0 items-center justify-center text-xl md:text-2xl ${item.iconBg}`}
             >
               <img
                 src={item.icon}
                 alt={item.name}
-                className="w-7 h-7 object-contain opacity-90"
+                className="w-6 h-6 md:w-7 md:h-7 object-contain opacity-90"
               />
             </div>
 
-            <div className="flex flex-col ml-4 flex-1 min-w-0">
-              <span className="text-white font-bold font-mono text-[15px] mb-0.5">
+            <div className="flex flex-col ml-3 md:ml-4 flex-1 min-w-0">
+              <span className="text-white font-bold font-mono text-[14px] md:text-[15px] mb-0.5">
                 {item.name}
               </span>
               <span
-                className={`${item.handleColor} font-mono text-[13px] truncate`}
+                className={`${item.handleColor} font-mono text-[12px] md:text-[13px] truncate`}
               >
                 {item.handle}
               </span>
-              <span className="text-gray-500 font-mono text-[12px] mt-1 truncate">
+              <span className="text-gray-500 font-mono text-[11px] md:text-[12px] mt-0.5 md:mt-1 truncate">
                 {item.description}
               </span>
             </div>
 
-            <div className="shrink-0 ml-4 flex items-center">
-              <span className="text-[#55e088] font-mono text-[13px] flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
+            <div className="shrink-0 ml-2 md:ml-4 flex items-center">
+              <span className="text-[#55e088] font-mono text-[11px] md:text-[13px] flex items-center gap-1.5 opacity-80 group-hover:opacity-100 transition-opacity">
                 {copiedId === item.id ? "✓ copied" : ""}
               </span>
             </div>

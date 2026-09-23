@@ -36,14 +36,14 @@ const projects = [
 export const Portfolio = () => {
   const [isLoading, setIsLoading] = useState(true);
   return (
-    <div className="h-full overflow-y-auto p-6">
-      <div className="grid grid-cols-1 gap-6">
+    <div className="h-full overflow-y-auto p-4 md:p-6">
+      <div className="grid grid-cols-1 gap-4 md:gap-6">
         {projects.map((project) => (
           <div
             key={project.id}
-            className="group flex flex-col md:flex-row items-start gap-6 bg-white/5 backdrop-blur-md rounded-2xl p-5 border border-white/10 hover:bg-white/10 transition-colors"
+            className="group flex flex-col md:flex-row items-start gap-4 md:gap-6 bg-white/5 backdrop-blur-md rounded-2xl p-4 md:p-5 border border-white/10 hover:bg-white/10 transition-colors"
           >
-            <div className="shrink-0 overflow-hidden rounded-xl border border-white/10 w-full md:w-40 h-32 bg-black/20 relative">
+            <div className="shrink-0 overflow-hidden rounded-xl border border-white/10 w-full md:w-40 h-48 md:h-32 bg-black/20 relative">
               {isLoading && (
                 <div className="absolute inset-0 bg-white/10 flex items-center justify-center">
                   <div role="status" className="text-center">
@@ -75,21 +75,22 @@ export const Portfolio = () => {
               />
             </div>
 
-            <div className="flex flex-col flex-1 min-w-0 h-full">
-              <h3 className="text-2xl font-bold text-white mb-2 font-mono">
+            <div className="flex flex-col flex-1 min-w-0 h-full w-full">
+              <h3 className="text-xl md:text-2xl font-bold text-white mb-2 font-mono">
                 {project.title}
               </h3>
 
-              <p className="text-gray-300 leading-relaxed text-sm font-mono mb-4">
+              <p className="text-gray-300 leading-relaxed text-[13px] md:text-sm font-mono mb-4">
                 {project.description}
               </p>
-              <div className="mt-auto flex flex-wrap gap-4 pt-2">
+
+              <div className="mt-auto flex flex-wrap gap-3 md:gap-4 pt-2">
                 {project.vercelLink && (
                   <a
                     href={project.vercelLink}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-[#35d7ef] hover:text-[#5ce4f8] font-mono text-sm no-underline flex items-center gap-1.5 transition-colors"
+                    className="text-[#35d7ef] hover:text-[#5ce4f8] font-mono text-[13px] md:text-sm no-underline flex items-center gap-1.5 transition-colors"
                   >
                     [ Live Demo ↗ ]
                   </a>
@@ -100,7 +101,7 @@ export const Portfolio = () => {
                     href={project.gitHub}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-gray-400 hover:text-white font-mono text-sm no-underline flex items-center gap-1.5 transition-colors"
+                    className="text-gray-400 hover:text-white font-mono text-[13px] md:text-sm no-underline flex items-center gap-1.5 transition-colors"
                   >
                     [ GitHub ]
                   </a>

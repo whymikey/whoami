@@ -2,10 +2,12 @@ import { DesktopIcon } from "@/shared/ui/DesktopIcon";
 import { useWindowStore } from "@/app/store/useWindowStore";
 import { motion } from "framer-motion";
 import { useRef } from "react";
+import { Icon } from "@/shared/ui/Icon/Icon";
+
 export const MOCK_FILES = [
-  { id: "1", label: "обо_мне.txt", icon: "📄" },
-  { id: "2", label: "Работы", icon: "📁" },
-  { id: "3", label: "Контакты", icon: "👤" },
+  { id: "1", label: "обо_мне.txt", iconId: "icon-txt" },
+  { id: "2", label: "Работы", iconId: "icon-folder" },
+  { id: "3", label: "Контакты", iconId: "icon-contacts" },
 ];
 
 export const DesktopGrid = () => {
@@ -26,7 +28,7 @@ export const DesktopGrid = () => {
         >
           <DesktopIcon
             label={el.label}
-            icon={el.icon}
+            icon={<Icon name={el.iconId} />}
             onDoubleClick={() => openWindow(el.id, el.label)}
           />
         </motion.div>
