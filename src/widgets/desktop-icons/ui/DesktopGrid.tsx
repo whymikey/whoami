@@ -1,6 +1,6 @@
 import { DesktopIcon } from "@/shared/ui/DesktopIcon";
 import { useWindowStore } from "@/app/store/useWindowStore";
-import { motion, useDragControls } from "framer-motion";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 export const MOCK_FILES = [
   { id: "1", label: "обо_мне.txt", icon: "📄" },
