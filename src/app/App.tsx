@@ -3,6 +3,7 @@ import { DesktopGrid } from "@/widgets/desktop-icons/ui";
 import { WindowManager } from "@/widgets/window-manager/ui";
 import { Dock } from "@/widgets/dock/ui";
 import { MusicWidget } from "@/widgets/music-player/ui";
+import { CalendarWidget } from "@/widgets/calendar/ui";
 
 function App() {
   return (
@@ -16,8 +17,9 @@ function App() {
           <DesktopGrid />
           <WindowManager />
           <Dock />
-          <div className="absolute top-8 right-8 z-20">
+          <div className="absolute top-8 right-8 z-0 flex flex-col items-center gap-10">
             <MusicWidget />
+            <CalendarWidget />
           </div>
         </div>
       </div>
